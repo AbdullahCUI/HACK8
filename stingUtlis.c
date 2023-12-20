@@ -57,3 +57,15 @@ void removeChar(char *s, char c){
         printf("Invalide parameter List...\n");
         return;
     }
+      // Store the address of the string array
+    char *storeStr = s;
+    for(int i = 0; s[i]!='\0'; i++){
+        // condition if the char valu not equal store the value to this address of store string
+        // any  change occure in store str it directly occur in the s str because both point same memory
+        if(s[i] != c){
+            *storeStr = s[i];
+            storeStr++;
+        }
+    }
+    *storeStr= '\0';
+}
