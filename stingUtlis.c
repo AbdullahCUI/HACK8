@@ -10,3 +10,13 @@ void replaceChar(char *name, char oldChar, char newChar) {
         printf("Invalide parameter list...\n");
         return;
     }
+    int i = 0;
+    for (i = 0; name[i]!= '\0'; i++) {
+        if (name[i] == oldChar) {
+            name[i] = newChar;
+        }
+    }
+    name[i] = '\0';
+
+   
+}
