@@ -146,3 +146,9 @@ char **lengthSplit(char *s, int n){
     splitStr[length] = NULL;
     return splitStr;
 }
+//Function: Print 2D dimension string;
+void print2DStr(char **splitStr){
+    for(int i = 0; splitStr[i]!=NULL; i++){
+        printf("\"%s\" ",splitStr[i]);
+    }
+}
