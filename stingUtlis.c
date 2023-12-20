@@ -35,3 +35,18 @@ char * replaceCharCopy(char *s, char oldChar, char newChar){
         printf("The memory was not allocated..\n");
         return 0;
     }
+
+    // LOOP: copy string to another
+    for(int i = 0; s[i]!='\0'; i++){
+        newString[i] = s[i];
+    }
+    newString[length] = '\0';
+    for(int i = 0; newString[i]!='\0'; i++){
+        if(newString[i] == oldChar){
+            newString[i] = newChar;
+        }
+    }
+    newString[length] = '\0';
+    return newString;
+
+}
