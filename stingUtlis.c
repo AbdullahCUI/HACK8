@@ -103,3 +103,25 @@ char * removeCharCopy(char *s, char c){
     newStr[length] = '\0';
     return newStr; 
 }
+
+// Function: The function take a String and Split the string according number "n"
+char **lengthSplit(char *s, int n){
+    if(s == NULL || n<0){
+        printf("Invalide Parameter List..\n");
+        return NULL;
+    }
+    // Find the length
+    int length = strlen(s);
+    // How many row we can made
+    length = length/n;
+    // If the some charachter remain or length to check if remain add one row if not so not add them
+    int check = (length * n) - (length);
+    if(check > 0){
+        length = length + 1;
+    }
+    // 2D dynamic string to store the address of the address 
+    char **splitStr = (char **)malloc(length * sizeof(char*));
+    if(splitStr == NULL){
+        printf("Memory allocation failed...\n");
+        return NULL;
+    }
