@@ -50,3 +50,10 @@ char * replaceCharCopy(char *s, char oldChar, char newChar){
     return newString;
 
 }
+//Function: remove the char which same to the string
+void removeChar(char *s, char c){
+    // Validity
+    if(s == NULL|| c == '\0'){
+        printf("Invalide parameter List...\n");
+        return;
+    }
