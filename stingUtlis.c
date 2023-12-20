@@ -125,3 +125,24 @@ char **lengthSplit(char *s, int n){
         printf("Memory allocation failed...\n");
         return NULL;
     }
+      // allocate memory for column so we can say allocate memory for column
+    for(int i = 0; i<length; i++){
+        splitStr[i] = (char *)malloc(n * sizeof(char));
+        if(splitStr[i] == NULL){
+            printf("Memory allocation failed...\n");
+            return NULL;
+        }
+    }
+    //Loop: Split the string to column by the value of n;
+    for(int i = 0; i<length; i++){
+        for(int j = 0; j<n; j++){
+            splitStr[i][j] = s[j];
+        }
+        // add terminate to every column
+        splitStr[i][n] = '\0';
+        s += n;
+    }
+    // add Null to 2D string indicate there our string as terminate
+    splitStr[length] = NULL;
+    return splitStr;
+}
