@@ -85,3 +85,21 @@ char * removeCharCopy(char *s, char c){
             storStr++;
         }
     }
+
+     // add termination to new string
+    *storStr = '\0';
+    // find length of s
+    int length = strlen(s);
+    // dynamic memory allocation to str
+    char *newStr = (char *)malloc(length * sizeof(char));
+    if(newStr == NULL){
+        printf("Memory allocation Fieled...\n");
+        return NULL;
+    }
+    // LOOP: To copy the one string from another
+    for(int i = 0; i<length; i++){
+        newStr[i] = s[i];
+    }
+    newStr[length] = '\0';
+    return newStr; 
+}
